@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Italiana&family=Parisienne&family=Tangerine:wght@400;700&display=swap"
+        rel="stylesheet">
+    <title>Dialog box</title>
+    <style>
+        body {
+            background-image: url("bg.jpg");
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+        }
+
+        .main-header-container {
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(72, 7, 7, 0.4);
+            color: rgb(248, 206, 206);
+        }
+
+        .container-top {
+            margin: 10px 10px;
+            display: flex;
+        }
+
+        .img-bright {
+            width: 20px;
+            height: 20px;
+            margin: 15px 10px;
+        }
+
+        .link-text {
+            color: rgb(248, 206, 206);
+            margin-top: 15px;
+            margin-left: 5px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            text-decoration: none;
+
+        }
+
+        .header-text {
+            margin-top: 15px;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        .heading {
+            margin-left: 100px;
+            margin-top: 10px;
+            margin-bottom: 0%;
+            font-size: 70px;
+            color: aliceblue;
+            font-weight: 400;
+            font-family: "Tangerine", serif;
+            font-style: normal;
+        }
+
+        .btn {
+            border: 0.5px solid white;
+            color: white;
+            background-color: rgba(21, 15, 15, 0.4);
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            font-weight: 100;
+            border-radius: 30px;
+            font-size: 20px;
+            margin: 20px 0px;
+            padding: 2px 20px;
+
+        }
+
+        .btn-container {
+            margin-left: 100px;
+
+        }
+
+        .btn2 {
+            margin-left: 40px;
+        }
+
+        .overlay {
+            background-color: rgba(0, 0, 0, 0.6);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal {
+            background-color: rgb(248, 206, 206);
+            ;
+            padding: 20px 30px;
+            border-radius: 10px;
+            position: relative;
+        }
+
+        .close-icon {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            height: 30px;
+        }
+
+        .form {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .form-input {
+            width: 300px;
+            margin: 10px 0;
+            font-size: 20px;
+            padding: 5px 10px;
+            border-radius: 40px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-header-container">
+        <div class="container-top">
+            <img src="sunny.png" class="img-bright">
+            <p class="header-text">Choose Your free design friend!!</p>
+            <a href="#">
+                <p class="link-text"><u>Design Now</u></p>
+            </a>
+        </div>
+
+        <div class="container-top">
+            <img src="sunny.png" class="img-bright">
+            <p class="header-text">Choose Your free design friend!!</p>
+            <a href="#">
+                <p class="link-text"><u>Design Now</u></p>
+            </a>
+        </div>
+
+        <div class="container-top">
+            <img src="sunny.png" class="img-bright">
+            <p class="header-text">Choose Your free design friend!!</p>
+            <a href="#">
+                <p class="link-text"><u>Design Now</u></p>
+            </a>
+        </div>
+    </div>
+    <p class="heading">Birch</p>
+    <div>
+        <p class="heading">Make A Room<br> To Sit Down A While</p>
+        <div class="btn-container">
+            <button class="btn" onclick="openModal()">Login </button>
+            <button class="btn2 btn">Sign-up</button>
+
+            <div class="overlay" id="overlay">
+                <div class="modal">
+                    <img src="close.png" class="close-icon" alt="Close" onclick="closeModal()" />
+                    <form class="form">
+                        <h1 class="form-header">Login</h1>
+
+                        <input type="text" placeholder="Enter your name" class="form-input" />
+
+                        <input type="email" placeholder="Enter your email" class="form-input" />
+
+                        <input type="text" placeholder="Enter your phone number" class="form-input" />
+
+                        <input type="text" placeholder="Enter your Address" class="form-input" />
+                    </form>
+
+                    <button type="button" class="btn">
+                        Login
+                    </button>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>
+        function openModal() {
+            const overlayElement = document.getElementById('overlay');
+            overlayElement.style.display = 'flex';
+        }
+
+        function closeModal() {
+            const overlayElement = document.getElementById("overlay");
+            overlayElement.style.display = "none";
+        }
+    </script>
+
+</body>
+
+</html>
